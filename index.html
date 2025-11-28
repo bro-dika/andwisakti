@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Andwisakti</title>
+  <meta name="description" content="Andwisakti — Rapper Indonesia. Musik hip hop independen, template front-end, dan proyek kreatif." />
+  
+  <!-- =======================
+     SEO DASAR
+======================= -->
+    <meta name="keywords" content="andwisakti, rapper indonesia, hip hop, musik indonesia, bungo, jambi, rap indonesia, muara bungo">
+    <meta name="author" content="andwisakti">
+    
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://andwisakti.vercel.app">
+    
+    <!-- =======================
+     OPEN GRAPH (FB, IG, WA, DISCORD)
+======================= -->
+    <meta property="og:title" content="Andwisakti">
+    <meta property="og:description" content="Rapper, creative coder, prompt engineer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andwisakti.vercel.app">
+    <meta property="og:image" content="https://freeimage.host/i/fCb97Xn"> 
+    <meta property="og:image:alt" content="Andwisakti image">
+    <meta property="og:site_name" content="Andwisakti">
+    
+    <!-- Untuk WhatsApp biar muncul besar -->
+    <meta property="og:image:secure_url" content="https://freeimage.host/i/fCb97Xn">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- =======================
+     TWITTER CARD (X)
+======================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Andwisakti — Rapper Indonesia">
+    <meta name="twitter:description" content="Musik hip hop independen.">
+    <meta name="twitter:image" content="https://freeimage.host/i/fCb97Xn">
+    
+    <!-- =======================
+     FAVICON
+======================= -->
+    <link rel="icon" type="image/png" href="https://freeimage.host/i/fCb97Xn">
+    <link rel="apple-touch-icon" href="https://freeimage.host/i/fCb97Xn">
+
+
+<!-- =======================
+     SCHEMA.ORG JSON-LD (untuk Google pencarian)
+======================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andwisakti",
+  "jobTitle": "Rapper",
+  "url": "https://andwisakti.vercel.app",
+  "image": "https://freeimage.host/i/fCb97Xn",
+  "description": "Andwisakti — rapper Indonesia yang merilis karya hip hop independen dan membuat template front-end.",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q137041856",
+    "https://musicbrainz.org/artist/704f5f00-1dea-403c-9c03-652ccdceef50",
+    "https://open.spotify.com/intl-id/artist/5r6YpU3qKvjD6AcLXMBszV",
+    "https://www.deezer.com/en/artist/353519852",
+    "https://genius.com/artists/Andwisakti",
+    "https://instagram.com/andwisakti",
+    "https://youtube.com/@andwisakti",
+    "https://github.com/bro-dika"
+  ]
+}
+</script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+  
+<style>
+      /* ---------- Reset & variables ---------- */
+    :root{
+      --bg:#061226; --panel:rgba(255,255,255,0.04); --glass:rgba(255,255,255,0.06);
+      --muted:#9fb0c8; --accent:#ff5a6d; --accent-2:#ff8a5b; --maxw:1100px;
+      --radius:14px; --ease:cubic-bezier(.2,.9,.3,1);
+      --btn-h:40px; --icon-size:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:linear-gradient(180deg,var(--bg),#081226);color:#e9f3ff;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;overflow-x:hidden}
+    a{color:inherit}
+
+    /* ---------- Parallax layers ---------- */
+    .layer{position:fixed;inset:0;pointer-events:none;will-change:transform;z-index:0}
+    .layer.bg{background-image:url('https://images.unsplash.com/photo-1505634028458-0a9f5b8f7d45?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center;opacity:0.28;filter:saturate(0.9) brightness(0.5)}
+    .layer.mid{background-image:url('https://images.unsplash.com/photo-1511376777868-611b54f68947?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center;opacity:0.15}
+    .layer.fore{background:radial-gradient(ellipse at 10% 20%, rgba(255,90,109,0.06), transparent 6%), radial-gradient(ellipse at 90% 80%, rgba(255,138,91,0.04), transparent 8%);}    
+    .overlay{position:fixed;inset:0;background:linear-gradient(180deg, rgba(3,7,18,0.35), rgba(3,7,18,0.65));z-index:1;pointer-events:none}
+
+    /* ---------- Page layout ---------- */
+    .wrap{position:relative;max-width:var(--maxw);margin:0 auto;padding:28px;z-index:10}
+
+    /* STICKY HEADER */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:18px;z-index:60;padding:6px 0;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);backdrop-filter:blur(6px)}
+
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700}
+    .brand h1{font-size:18px}
+    .brand p{font-size:12px;color:var(--muted)}
+
+    /* ---------- Hamburger & drawer ---------- */
+    .menu-btn{width:48px;height:48px;border-radius:12px;background:var(--panel);border:1px solid rgba(255,255,255,0.02);backdrop-filter:blur(6px);display:grid;place-items:center;cursor:pointer;transition:all .25s var(--ease)}
+    .menu-btn:active{transform:scale(.98)}
+    .hamb{width:22px;height:16px;position:relative}
+    .hamb span{position:absolute;height:2px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0.9));left:0;right:0;border-radius:2px;transition:all .28s var(--ease)}
+    .hamb .a{top:0}.hamb .b{top:50%;transform:translateY(-50%)}.hamb .c{bottom:0}
+    .menu-btn.open .a{transform:translateY(6px) rotate(45deg)}
+    .menu-btn.open .b{opacity:0}
+    .menu-btn.open .c{transform:translateY(-6px) rotate(-45deg)}
+
+    .drawer{position:fixed;right:0;top:0;height:100vh;width:360px;background:linear-gradient(180deg,rgba(12,16,22,0.95),rgba(6,8,12,0.98));backdrop-filter:blur(14px);box-shadow:-40px 0 80px rgba(0,0,0,0.6);transform:translateX(100%);transition:transform .45s var(--ease);z-index:70;padding:36px}
+    .drawer.open{transform:translateX(0)}
+    .drawer .links{display:flex;flex-direction:column;gap:18px}
+    .drawer a{color:#eaf6ff;text-decoration:none;font-size:18px}
+    .drawer .social{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+
+    /* social button styles (logo + text) */
+    .social-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#eaf6ff;text-decoration:none}
+    .social-btn svg{width:var(--icon-size);height:var(--icon-size);flex-shrink:0}
+
+    /* ---------- Content ---------- */
+    .spacer{height:100px}
+    .hero{display:flex;gap:28px;align-items:center}
+    .hero .card{display:flex;gap:24px;align-items:center}
+    .hero img{width:320px;height:auto;border-radius:12px;object-fit:cover;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+    .bio h2{font-size:30px;margin-bottom:6px}
+    .bio p{color:var(--muted);margin-bottom:12px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+    .music-card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+    /* card button (icon + text) */
+    .btn{height:var(--btn-h);display:inline-flex;align-items:center;gap:10px;padding:0 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;font-weight:600;border:none;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn svg{width:18px;height:18px}
+
+    /* ---------- Visualizer ---------- */
+    .viz{display:flex;gap:8px;align-items:flex-end;height:88px;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+    .viz .bar{width:8px;border-radius:4px;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.15));transition:height .18s ease}
+
+    /* ---------- Cards glass stronger ---------- */
+    .card{background:var(--panel);border-radius:var(--radius);padding:22px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(2,6,23,0.6);backdrop-filter:blur(10px)}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:36px;color:var(--muted);text-align:center;font-size:13px}
+
+    /* ---------- Animations ---------- */
+    .reveal{opacity:0;transform:translateY(14px);animation:reveal .7s var(--ease) forwards}
+    .reveal.delay{animation-delay:.12s}
+    @keyframes reveal{to{opacity:1;transform:none}}
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:980px){
+      .hero{flex-direction:column}
+      .hero img{width:100%}
+      .drawer{width:100vw}
+    }
+    
+    /* smooth scroll & offset untuk header sticky */
+    html {
+      scroll-behavior: smooth;
+      
+    /* sesuaikan 80px dengan tinggi header + margin-top yang dipakai */
+    scroll-padding-top: 88px;
+    }
+    
+    /* pastikan link dapat diklik dan pointer terlihat */
+    .drawer .links a {
+      cursor: pointer;
+      display: inline-block;
+    }
+    
+    /* Fix scroll offset untuk section targets */
+main section[id] {
+    scroll-margin-top: 150px;
+}
+
+/* Active link style */
+.drawer .links a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+</style>
+  
+
+
+</head>
+<body>
+
+  <!-- Parallax layers -->
+  <div class="layer bg" id="l-bg"></div>
+  <div class="layer mid" id="l-mid"></div>
+  <div class="layer fore" id="l-fore"></div>
+  <div class="overlay"></div>
+
+  <div class="wrap">
+    <header>
+        
+      <div class="brand">
+        <div class="logo">
+            <img src="assets/logo/logo-andwisakti.png" alt="Logo Andwisakti" width= "50px" height="50px" />
+        </div>
+        <div>
+          <h1>Andwisakti</h1>
+          <p>Rapper • Creative Coder • Prompt Engineer</p>
+        </div>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <div class="hamb"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+      </button>
+    </header>
+
+    <div class="spacer"></div>
+
+    <main>
+      <section class="hero card reveal" id="home">
+        <img src="assets/img/andwisaktiperform.jpg?q=80&w=1200&auto=format&fit=crop" alt="portrait" loading="lazy">
+        <div class="bio">
+          <h2>Andwisakti</h2>
+          <p>Rapper Indonesia - yang kerap mengangkat isu tentang kehidupan, dan berani mengkritik sistem yang bobrok di dalam instansi melalui lagunya yang berjudul Lahan Uang.</p>
+          <div class="tags">
+            <div class="tag">Hip Hop</div>
+            <div class="tag">Rapper Indonesia</div>
+            <div class="tag">Bungo</div>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:12px">
+            <button class="btn" id="playLatest">
+              <!-- Play SVG -->
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3v18l15-9L5 3z" fill="currentColor"/></svg>
+              Play Latest
+            </button>
+            <a class="btn secondary" id="followBtn" href="https://instagram.com/andwisakti" target="_blank" rel="noopener noreferrer">
+              <!-- Instagram SVG -->
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Follow
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tentang" class="card reveal delay" style="margin-top:24px">
+        <h3>About</h3>
+        <p style="color:var(--muted)">Andwisakti adalah rapper yang berasal dari Muara Bungo, Jambi, Indonesia. Mulai berkecimpung di dunia RAP pada tahun 2018, dengan menggunakan nama panggung Sakti 2000. Akan tetapi, dirinya sempat memutuskan untuk berhenti. Tahun 2023, naskah berkata lain, dia mendapat dorongan dari salah satu OG Hip Hop di muara bungo (Dijhon), dorongannya yaitu supaya Andwisakti tetap berkecimpung di dunia RAP. Darisitulah ia memulai langkahnya lagi dari titik 0. Perlu diketahui, di setiap karya-nya Andwisakti, dia selalu mendapatkan support dari produser/rapper OG di muara bungo yang bernama Wild Burhan. Selain musik, dia juga aktif dalam membuat template front-end, membuat website resmi pelaku usaha, dan baru-baru ini dia juga membuat pentest tools untuk keamanan website.</p>
+      </section>
+
+      <section id="music" class="card reveal" style="margin-top:20px">
+        <h3>Music</h3>
+        <div class="grid">
+          <div class="music-card card">
+            <img src="assets/img/lahan-uang.jpg?q=80&w=800&auto=format&fit=crop" alt="cover">
+            <h4 style="margin-top:10px">Lahan Uang (Lyric Video)</h4>
+            <p style="color:var(--muted)">Rilis 2024 • Hip Hop</p>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <a class="btn" href="https://youtu.be/puOZkAbP9VY?si=ZBuokT4sz1Z4fmrb" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" /></svg>YouTube</a>
+            </div>
+          </div>
+
+          <div class="music-card card">
+            <img src="assets/img/rampi-rampo-crew.jpg?q=80&w=800&auto=format&fit=crop" alt="cover">
+            <h4 style="margin-top:10px">Bungo In Tha House</h4>
+            <p style="color:var(--muted)">2025 • Rampi Rampo Crew</p>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <a class="btn" href="https://youtu.be/8ay3Lba-KG8?si=hrug8mmi-kVckGBw" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" /></svg>YouTube</a>
+            </div>
+          </div>
+
+          <div class="music-card card">
+            <img src="assets/img/suara-orang-awam.jpg?q=80&w=800&auto=format&fit=crop" alt="cover">
+            <h4 style="margin-top:10px">Suara Orang Awam</h4>
+            <p style="color:var(--muted)">2025 • EP</p>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <a class="btn" href="https://open.spotify.com/intl-id/album/4Zst1snVzzNgEZeclyPV5h" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288" /></svg>Spotify</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portofolio" class="card reveal" style="margin-top:20px">
+        <h3>Portfolio & Projects</h3>
+        <div class="grid">
+          <div class="card">
+            <strong>Taher Teknik</strong>
+            <p style="color:var(--muted)">Taher Teknik merupakan jasa layanan service ac handal, yang berdomisili di muara bungo.</p>
+            <div style="margin-top:10px"><a class="btn" href="https://taherteknikac.wordpress.com">Lihat
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/></svg>
+            </a></div>
+          </div>
+          <div class="card">
+            <strong>Pasar Budidaya</strong>
+            <p style="color:var(--muted)">Wadah hasil budidaya petani dan peternak, yang bertujuan untuk menghubungkan antara pelaku budidaya dan khalayak ramai.</p>
+            <div style="margin-top:10px"><a class="btn" href="https://andisamovement-lab.github.io/Pasar-Budidaya">Lihat
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/></svg>
+            </a></div>
+          </div>
+          <div class="card">
+            <strong>Media Pembelajaran</strong>
+            <p style="color:var(--muted)">Media pembelajaran ini berupa Map Indonesia Interaktif versi 34 provinsi. Menariknya, ketika kita klik wilayah provinsi, akan didapati info terkait wilayah provinsi yang diklik. Sangat cocok untuk belajar seru bersama anak, keponakan, atau bahkan cucu.</p>
+            <div style="margin-top:10px"><a class="btn" href="https://andisamovement-lab.github.io/Map-Interaktif-34-Provinsi/">Lihat
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/></svg>
+            </a></div>
+          </div>
+          <div class="card">
+            <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg> Github</strong>
+            <p style="color:var(--muted)">Ada eksperimen yang haha hihi disini.</p>
+            <div style="margin-top:10px"><a class="btn" href="https://github.com/bro-dika">Lihat
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/></svg>
+            </a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="visualizer" class="card reveal" style="margin-top:20px">
+        <h3>Visualizer</h3>
+        <div class="viz" id="viz"></div>
+      </section>
+
+      <section id="contact" class="card reveal" style="margin-top:20px">
+        <h3>Contact</h3>
+        <p style="color:var(--muted)">Info lebih lanjut melalui: <strong>dika13122000@gmail.com</strong></p>
+        <form id="contactForm" style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <input id="name" placeholder="Nama" required style="padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:#fff">
+          <input id="email" placeholder="Email" required style="padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:#fff">
+          <textarea id="message" rows="4" placeholder="Pesan" required style="padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:#fff"></textarea>
+          <div style="display:flex;gap:8px"><button class="btn">Kirim</button><button class="btn secondary" type="button" onclick="document.getElementById('contactForm').reset()">Reset</button></div>
+          <small id="formStatus" style="color:var(--muted)"></small>
+        </form>
+      </section>
+
+      <footer>© <span id="year"></span> Andwisakti — All rights reserved</footer>
+    </main>
+  </div>
+
+  <!-- Drawer (outside page flow) -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <div style="display:flex;gap:12px;align-items:center"><div class="logo"><img src="assets/logo/logo-andwisakti.png" alt="Logo Andwisakti" width= "50px" height="50px" /></div><strong>Andwisakti</strong></div>
+      <button id="closeDrawer" style="background:none;border:none;color:var(--muted);cursor:pointer">Close</button>
+    </div>
+    <div class="links">
+      <a href="#home" data-target="home">Home</a>
+      <a href="#tentang" data-target="tentang">About</a>
+      <a href="#music" data-target="music">Music</a>
+      <a href="#portofolio" data-target="portofolio">Portfolio</a>
+      <a href="#contact" class="secondary" data-target="contact">Contact</a>
+    </div>
+    <div class="social">
+      <a class="social-btn" href="https://instagram.com/andwisakti" target="_blank" rel="noopener noreferrer">
+        <!-- Instagram SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+        </svg>
+        Instagram
+      </a>
+
+      <a class="social-btn" href="https://youtube.com/@andwisakti" target="_blank" rel="noopener noreferrer">
+        <!-- YouTube SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+        </svg>
+        YouTube
+      </a>
+
+      <a class="social-btn" href="https://open.spotify.com/intl-id/artist/5r6YpU3qKvjD6AcLXMBszV" target="_blank" rel="noopener noreferrer">
+        <!-- Spotify SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
+        </svg>
+        Spotify
+      </a>
+    </div>
+  </aside>
+  
+  
+  
+  <!-- SCRIPT --> 
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const drawer = document.getElementById('drawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const drawerLinks = document.querySelectorAll('#drawer .links a');
+    const header = document.querySelector('header');
+
+    function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    menuBtn.classList.add('open');
+    document.body.style.overflow = 'hidden';
+        }
+
+    function closeDrawerFn() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    menuBtn.classList.remove('open');
+    document.body.style.overflow = '';
+        }
+
+    menuBtn.addEventListener('click', () => {
+    drawer.classList.contains('open') ? closeDrawerFn() : openDrawer();
+        });
+    closeDrawer.addEventListener('click', closeDrawerFn);
+
+// ===== SCROLL TO SECTION - FIX TOTAL =====
+drawerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href.startsWith('#')) return;
+
+        e.preventDefault();
+        
+        const targetId = this.dataset.target || href.replace('#', '');
+        const targetEl = document.getElementById(targetId);
+        
+        if (targetEl) {
+            // Tutup drawer dulu
+            closeDrawerFn();
+            
+            // Scroll dengan offset tepat menggunakan scrollIntoView
+            targetEl.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest'
+            });
+            
+            // Tambahan offset manual untuk header sticky (150px total)
+            setTimeout(() => {
+                const scrollOffset = window.scrollY - 150;
+                window.scrollTo({ top: scrollOffset, behavior: 'smooth' });
+            }, 100);
+        }
+    });
+});
+
+// ===== ACTIVE LINK HIGHLIGHT =====
+const sections = document.querySelectorAll('main section[id]');
+function updateActiveLink() {
+    let current = '';
+    const scrollPos = window.scrollY + 150; // Offset header + spacer
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollPos >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    drawerLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.target === current) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
+
+// ===== CLOSE DRAWER OUTSIDE CLICK =====
+document.addEventListener('click', e => {
+    if (drawer.classList.contains('open') && 
+        !drawer.contains(e.target) && 
+        !menuBtn.contains(e.target)) {
+        closeDrawerFn();
+    }
+});
+
+// ===== ESC CLOSE =====
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeDrawerFn();
+    }
+});
+
+// ===== VISUALIZER =====
+const viz = document.getElementById('viz');
+if (viz) {
+    for (let i = 0; i < 16; i++) {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        viz.appendChild(bar);
+    }
+    setInterval(() => {
+        document.querySelectorAll('.viz .bar').forEach(bar => {
+            bar.style.height = (10 + Math.random() * 90) + '%';
+        });
+    }, 220);
+}
+
+// ===== CONTACT FORM =====
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const status = document.getElementById('formStatus');
+        status.textContent = 'Mengirim...';
+        status.style.color = '#ff5a6d';
+        
+        setTimeout(() => {
+            status.textContent = 'Terima kasih — pesan terkirim!';
+            status.style.color = '#90ff86';
+            contactForm.reset();
+        }, 1200);
+    });
+}
+</script>
+
+
+</body>
+</html>
